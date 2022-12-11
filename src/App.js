@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Counter from './routes/count';
+import Notes from './routes/notes';
+
+function NavBar() {
+
+  return (
+    <nav className="navbar">
+      <ul className='list'>
+        <li>< a href="#" >Counter</a></li>
+        <li>< a href="#" >Notes</a></li>
+      </ul>
+    </nav>
+  );
+}
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <Notes />
+
     </div>
   );
 }

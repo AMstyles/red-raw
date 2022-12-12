@@ -1,6 +1,7 @@
 import './App.scss';
 import Counter from './routes/count';
 import Notes from './routes/notes';
+import Spotify from './spotify/mainPage';
 
 function NavBar() {
 
@@ -18,8 +19,8 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <Notes />
+
+      <Spotify />
 
     </div>
   );

@@ -4,6 +4,7 @@ const initialState = {
     artists: [],
     albums: [],
     songs: [],
+    nowPlaying: {}
 }
 
 const searchReducer = (state = initialState, action) => {
@@ -25,6 +26,12 @@ const searchReducer = (state = initialState, action) => {
             return {
                 ...state,
                 songs: action.payload
+            }
+
+        case 'PLAY_SONG':
+            return {
+                ...state,
+                nowPlaying: action.payload
             }
 
         default:

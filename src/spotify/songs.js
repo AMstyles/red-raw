@@ -1,12 +1,21 @@
 import './songs.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 
 function SongsComponent(props) {
 
+    const dispatch = useDispatch();
+
+    function playSong() {
+        dispatch({ type: 'PLAY_SONG', payload: props.song })
+    }
+
+
+
     return (
 
-        <div className="song">
+        <div className="song" onClick={playSong}>
 
             <div className='songInfo'>
                 <img className='songImage' src={props.song.album.cover_small

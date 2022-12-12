@@ -3,7 +3,7 @@ import Artists from './artists';
 import Songs from './songs';
 import { useState, useEffect } from 'react';
 import './mainPage.scss'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const uri = 'https://striveschool-api.herokuapp.com/api/deezer/search?q='
@@ -85,12 +85,29 @@ function Spotify() {
         search('rick astley')
     }, [])
 
+    const nowPlaying = useSelector(state => state.search.nowPlaying)
+    console.log(nowPlaying)
     return (
 
         <div className="spotify">
 
             <div className="search">
-                <input type="text" placeholder="Search" value={searchQuery} onChange={handleOnChnage} />
+
+                <div className="fieldComtainer">
+                    <input className='searchField' type="text" placeholder="Search" value={searchQuery} onChange={handleOnChnage} />
+                </div>
+
+
+
+                <div className="nowPlayingContainer">
+                    <div className="nowPlaying">
+
+                        <h2>{nowPlaying.title_short}</h2>
+
+                    </div>
+                </div>
+
+
             </div>
 
             <div className="contents">
